@@ -1,0 +1,43 @@
+Commands
+Creation of virtual environment python -m venv NEW_ENV NEW_ENV puede tener cualqueir nombre
+
+Activate virtual environment NEW_ENV\Scripts\activate Windows estando fuera de la carpeta NEW_ENV Source ./bin/activate Linux
+
+2.1. Error? Ejecucion de scripts deshabilitada 1. Get-ExecutionPolicy -list 2. Set-ExecutionPolicy -Scope LocalMachine Bypass 3. Ejecutar paso 2 NEW_ENV\Scripts\activate
+
+Install Django pip install Django
+
+Create a project Django django-admin startproject INFO INFO puede tener cualqueir nombre
+
+Move to INFO directory cd INFO
+
+Run server Django python manage.py runserver
+
+Shut Down server CTRL + C
+
+Initialize an application with name like locro python manage.py startapp locro
+
+Apply migrations python manage.py migrate
+
+Creating a Super User
+python manage.py createsuperuser
+
+OperationalError: no such table: auth_user --> Run python manage.py migrate
+
+Link: http://localhost:8000/admin
+
+Configuration of database
+Install dependency pip install mysqlclient
+
+In General/INFO/settings.py
+
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "informatorio",
+        "USER": "root",
+        "PASSWORD": "root",
+        "HOST": "localhost",
+        "PORT": "3306",
+    }
+}
